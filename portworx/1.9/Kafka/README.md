@@ -1,5 +1,5 @@
 
-* The following instruction will install Kafka service on DC/OS cluster backed by PX volumes for persistent storage.
+The following instruction will install Kafka service on DC/OS cluster backed by PX volumes for persistent storage.
 
 Please review the main [Portworx on DCOS](https://docs.portworx.com/scheduler/mesosphere-dcos/) documentation.
 
@@ -9,7 +9,6 @@ Please review the main [Portworx on DCOS](https://docs.portworx.com/scheduler/me
 - Portworx works best when installed on all nodes in a DC/OS cluster.  If Portworx is to be installed on a subset of the cluster, then:
   * the agent-nodes must include attributes indicating the participate in the Portworx cluster.
   * services that depend on Portworx volumes must specify "constraints" to ensure they are launched on nodes that can access Portworx volumes.
-- All nodes in the cluster that will participate in a Portworx cluster MUST have a separate non-root volume to use.
 - A node in the cluster with a working DC/OS CLI.
 
 # Install Kafka
