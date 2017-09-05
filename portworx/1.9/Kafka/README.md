@@ -68,3 +68,7 @@ dcos kafka-px --name kafka endpoints broker
         "vip": "broker.kafka.l4lb.thisdcos.directory:9092"
 }
 ```
+```
+$ dcos kafka-px --name kafka endpoints zookeeper
+master.mesos:2181/dcos-service-kafka
+```
