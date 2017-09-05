@@ -47,7 +47,7 @@ There will be one volume for each Broker.
 ![Kafka Portworx Volume](img/kafka-volume-01.png)
 
 # Verifying Instalation
-Install Kafka CLI using the following command
+Install Kafka CLI using the following command on DC/OS client
 ```
   $ dcos package install kafka-px --cli
 ```
@@ -71,4 +71,27 @@ dcos kafka-px --name kafka endpoints broker
 ```
 $ dcos kafka-px --name kafka endpoints zookeeper
 master.mesos:2181/dcos-service-kafka
+```
+Use Kafka CLI command to create a topic
+```
+$ dcos kafka-px --name kafka  topic create Hello-World --partitions 3 --replication 3
+{
+  "message": "Output: Created topic \"Hello-World\".\n"
+}
+```
+Connect to the master node and launch kafka client container
+```
+$ dcos node ssh --master-proxy --leader
+core@ip-10-0-6-89 ~ $ docker run -it mesosphere/kafka-client
+root@a1d061372400:/bin#
+```
+Produce a message and send the message to all kafka broker
+```
+root@a1d061372400:/bin# echo "Hello World 01" | ./kafka-console-producer.sh --broker-list kafka-2-broker.kafka.mesos:1025,kafka-0-broker.kafka.mesos:1025,kafka-1-broker.kafka.mesos:1029 --topic Hello-World
+```
+Consume the message
+```
+root@a1d061372400:/bin# ./kafka-console-consumer.sh --zookeeper master.mesos:2181/dcos-service-kafka --topic test-one --from-beginning
+
+Hello World 01
 ```
