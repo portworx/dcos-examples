@@ -1,6 +1,5 @@
-![DC/OS packet_write_wait: Connection to 70.0.7.187: Broken pipe/Default/Windows-Live-Writer/dcoslogo.png) ![Portworx Logo](https://github.com/portworx/px-dev/blob/master/images/pwx
-Bhavanas-MacBook-Pro:DCOS 1.9 bhavana$
-* Provides data protection and container-granular management. The following instruction will install Kafka service on DC/OS cluster backed by PX volumes for persistent storage.
+
+* The following instruction will install Kafka service on DC/OS cluster backed by PX volumes for persistent storage.
 
 Please review the main [Portworx on DCOS](https://docs.portworx.com/scheduler/mesosphere-dcos/) documentation.
 
