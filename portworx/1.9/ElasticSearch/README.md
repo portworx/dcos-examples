@@ -30,11 +30,11 @@ You can also click on the “Install” button on the WebUI next to the service 
 ## Advanced Install
 If you want to modify the defaults, click on the “Install” button next to the package on the DCOS UI and then click on
 “Advanced Installation”
-
+![Elastic Install Options](img/elastic-install-02.png)
 This provides an option to change the service name, volume name, volume size, and provide any additional options that needs to be passed to the docker volume driver.
 The default number of master_node count is 3 and this is not changeable. The default number of data_nodes count is 2 and default count for ingest_nodes, coordinator_nodes is 1.
-![Elastic Install Options](img/elastic-install-02.png)
 ![Elastic Portworx Options](img/elastic-install-03.png)
+![Elastic Install Options](img/elastic-install-04.png)
 Click on “Review and Install” and then “Install” to start the installation of the service.
 ## Install Status
 Click on the Services page to monitor the status of the installation.
@@ -42,7 +42,7 @@ Click on the Services page to monitor the status of the installation.
 Elasticsearch service is ready to use when the schedulre service and all the elastic services are in running state.
 ![Elastic Install Complete](img/Elastic-service-02.png)
 Checking the Portworx's cluster will list multiple volumes that were automatically created using the options provided during install.
-![Elastic Portworx Volume](img/elastic-volume-01.png)
+![Elastic Portworx Volume](img/elastic_volume_01.png)
 
 # Verifying Instalation
 Install Elasticsearch CLI using the following command on DC/OS client
@@ -50,9 +50,8 @@ Install Elasticsearch CLI using the following command on DC/OS client
   $ dcos package install elastic-px --cli
 ```
 Find the elastic search master-http endpoint from DCOS workstation
-```
 ![Elastic Master Endpoint](img/elastic_endpoints.png)
-```
+
 Connect to the master node and check the cluster status
 ```
 $ dcos node ssh --master-proxy --leader
