@@ -1,7 +1,6 @@
 
 The following instruction will install Cassandra service on DC/OS cluster backed by PX volumes for persistent storage.
 
-Please review the main [Portworx on DCOS](https://docs.portworx.com/scheduler/mesosphere-dcos/) documentation.
 
 # Prerequisites
 
@@ -10,6 +9,8 @@ Please review the main [Portworx on DCOS](https://docs.portworx.com/scheduler/me
   * the agent-nodes must include attributes indicating the participate in the Portworx cluster.
   * services that depend on Portworx volumes must specify "constraints" to ensure they are launched on nodes that can access Portworx volumes.
 - A node in the cluster with a working DC/OS CLI.
+
+Please review the main [Portworx on DCOS](https://docs.portworx.com/scheduler/mesosphere-dcos/) documentation.
 
 # Install Cassandra
 ## Adding repository to DC/OS cluster
@@ -53,5 +54,7 @@ Install Cassandra CLI using the following command on DC/OS client
 Installing CLI subcommand for package [cassandra-px] version [stub-universe]
 New command available: dcos cassandra-px
 ```
+# Further resource
 
+For more detailed description on using Portworx through DCOS please visit  [Portworx on DCOS framework homepage](https://docs.portworx.com/scheduler/mesosphere-dcos)
 
