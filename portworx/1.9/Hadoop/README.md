@@ -42,7 +42,7 @@ Click on “Review and Install” and then “Install” to start the installati
 ## Install Status
 Click on the Services page to monitor the status of the installation.
 ![Hadoop Service Status](img/Hadoop-service-01.png)
-There will be one service for the scheduler and one each for the Journal, Name, Zookeeper, Data and Yarn nodes. are in running state.
+There will be one service for the scheduler and one each for the Journal, Name, Data and Yarn nodes.
 ![Hadoop Install Complete](img/Hadoop-service-02.png)
 Checking the Portworx's cluster will list multiple volumes that were automatically created using the options provided during install.
 On the Portworx cluster, you should see multiple volumes that were automatically created using the options provided during install, one for each of the Journal, Name and Data nodes.
