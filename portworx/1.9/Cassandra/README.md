@@ -31,20 +31,20 @@ This will install all the prerequisites and start the Kafka service on 3 private
 ## Advanced Install
 If you want to modify the defaults, click on the “Install” button next to the package on the DC/OS UI and then click on
 “Advanced Installation”
-
+![Cassandra Install Options](img/Cassandra-install-02.png)
 This provides an option to change the service name, volume name, volume size, and provide any additional options that needs to be passed to the docker volume driver.
 Cassandra related parameters can also be modified for example number of Cassandra nodes.
-![Cassandra Install Options](img/Cassandra-install-02.png)
-![Cassandra Portworx Options](img/cassandra-install-03.png)
+![Cassandra Install Options](img/cassandra-install-03.png)
+![Cassandra Portworx Options](img/Cassandra-install-04.png)
 Click on “Review and Install” and then “Install” to start the installation of the service.
 ## Install Status
 Click on the Services page to monitor the status of the installation.
-![Cassandra Service Status](img/cassandra-service-01.png)
+![Cassandra Service Status](img/Cassandra-service-01.png)
 Cassandra cluster is ready to use when the schedulre service and all the cassandra services are in running state.
 ![Cassandra Install Complete](img/Cassandra-service-02.png)
 Checking the Portworx's cluster will list multiple volumes that were automatically created using the options provided during install.
 There will be one volume for each cassandra server
-![Kafka Portworx Volume](img/cassandra-volume-01.png)
+![Kafka Portworx Volume](img/Cassandra-volume-01.png)
 
 # Verifying Instalation
 Install Kafka CLI using the following command on DC/OS client
