@@ -47,7 +47,6 @@ Checking the Portworx's cluster will list multiple volumes that were automatical
 There will be one volume for each cassandra server
 ![Cassandra Portworx Volume](img/Cassandra-volume-01.png)
 
-# Verifying Instalation
 Install Cassandra CLI using the following command on DC/OS client
 ```
  $ dcos package install cassandra-px --cli
