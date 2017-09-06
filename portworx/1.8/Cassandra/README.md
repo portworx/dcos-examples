@@ -35,7 +35,7 @@ If you want to modify the defaults, click on the “Install” button next to th
 ![Cassandra Install Options](img/Cassandra-install-02.png)
 This provides an option to change the service name, volume name, volume size, and provide any additional options that needs to be passed to the docker volume driver.
 Cassandra related parameters can also be modified for example number of Cassandra nodes.
-![Cassandra Install Options](img/cassandra-install-03.png)
+![Cassandra Install Options](img/Cassandra-install-03.png)
 ![Cassandra Portworx Options](img/Cassandra-install-04.png)
 Click on “Review and Install” and then “Install” to start the installation of the service.
 ## Install Status
