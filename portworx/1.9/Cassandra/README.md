@@ -26,7 +26,7 @@ If you want to use the defaults, you can now run the dcos command to install the
  $ dcos package install --yes cassandra-px
 ```
 You can also click on the  “Install” button on the WebUI next to the service and then click “Install Package”.
-This will install all the prerequisites and start the Kafka service on 3 private agents.
+This will install all the prerequisites and start a 3 node Cassandra cluster.
 
 ## Advanced Install
 If you want to modify the defaults, click on the “Install” button next to the package on the DC/OS UI and then click on
@@ -44,10 +44,10 @@ Cassandra cluster is ready to use when the schedulre service and all the cassand
 ![Cassandra Install Complete](img/Cassandra-service-02.png)
 Checking the Portworx's cluster will list multiple volumes that were automatically created using the options provided during install.
 There will be one volume for each cassandra server
-![Kafka Portworx Volume](img/Cassandra-volume-01.png)
+![Cassandra Portworx Volume](img/Cassandra-volume-01.png)
 
 # Verifying Instalation
-Install Kafka CLI using the following command on DC/OS client
+Install Cassandra CLI using the following command on DC/OS client
 ```
  $ dcos package install cassandra-px --cli
 Installing CLI subcommand for package [cassandra-px] version [stub-universe]
