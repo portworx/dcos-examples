@@ -44,7 +44,7 @@ Elasticsearch service is ready to use when the scheduler service and all the ela
 Checking the Portworx's cluster will list multiple volumes that were automatically created using the options provided during install.
 ![Elastic Portworx Volume](img/elastic_volume_01.png)
 
-# Verifying Instalation
+## Verifying Instalation
 Install Elasticsearch CLI using the following command on DC/OS client
 ```
   $ dcos package install elastic-px --cli
@@ -58,4 +58,5 @@ $ dcos node ssh --master-proxy --leader
 ```
 ![Elastic Cluster Health](img/elastic_cluster_health.png)
 
-```
+# Further resource
+For more detailed description on using Portworx through DCOS please visit  [Portworx on DCOS framework homepage](https://docs.portworx.com/scheduler/mesosphere-dcos)
