@@ -28,18 +28,18 @@ If you want to use the defaults, you can now run the dcos command to install the
 You can also click on the “Install” button on the WebUI next to the service and then click “Install Package”.
 
 ## Advanced Install
-If you want to modify the defaults, click on the “Install” button next to the package on the DCOS UI and then click on
+If you want to modify the defaults, click on the “Install” button next to the package on the DC/OS UI and then click on
 “Advanced Installation”
 ![Elastic Install Options](img/elastic-install-02.png)
 This provides an option to change the service name, volume name, volume size, and provide any additional options that needs to be passed to the docker volume driver.
-The default number of master_node count is 3 and this is not changeable. The default number of data_nodes count is 2 and default count for ingest_nodes, coordinator_nodes is 1.
+The default number of master_node count is 3 and this is not changeable. The default number of data_nodes count is 2. The default count for ingest_nodes and coordinator_nodes is 1.
 ![Elastic Portworx Options](img/elastic-install-03.png)
 ![Elastic Install Options](img/elastic-install-04.png)
 Click on “Review and Install” and then “Install” to start the installation of the service.
 ## Install Status
 Click on the Services page to monitor the status of the installation.
 ![Elastic Service Status](img/elastic-service-01.png)
-Elasticsearch service is ready to use when the schedulre service and all the elastic services are in running state.
+Elasticsearch service is ready to use when the scheduler service and all the elastic services are in running state.
 ![Elastic Install Complete](img/Elastic-service-02.png)
 Checking the Portworx's cluster will list multiple volumes that were automatically created using the options provided during install.
 ![Elastic Portworx Volume](img/elastic_volume_01.png)
