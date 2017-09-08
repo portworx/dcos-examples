@@ -43,9 +43,9 @@ There will be one volume for each Cassandra node
 
 Install Cassandra CLI using the following command on DC/OS client
 ```
- $ dcos package install cassandra-px --cli
-Installing CLI subcommand for package [cassandra-px] version [stub-universe]
-New command available: dcos cassandra-px
+ $ dcos package install portworx-cassandra --cli
+Installing CLI subcommand for package [portworx-cassandra] version [stub-universe]
+New command available: dcos portworx-cassandra
 ```
 # Further resource
 
