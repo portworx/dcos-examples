@@ -3,36 +3,29 @@ The following instruction will install Kafka service on DC/OS cluster backed by 
 
 # Prerequisites
 
-- A running DC/OS v1.9 cluster with at least 3 private agents with Portworx running on all three
-- Portworx works best when installed on all nodes in a DC/OS cluster.  If Portworx is to be installed on a subset of the cluster, then:
-  * the agent-nodes must include attributes indicating the participate in the Portworx cluster.
-  * services that depend on Portworx volumes must specify "constraints" to ensure they are launched on nodes that can access Portworx volumes.
+- A DC/OS v1.9 cluster with Portworx installed on at least 3 private agents
+- Portworx works best when installed on all nodes in a DC/OS cluster.  If Portworx is to be installed on a subset of the cluster, then constraints must be used to specify the nodes where Portworx is installed
 - A node in the cluster with a working DC/OS CLI.
 
 Please review the main [Portworx on DCOS](https://docs.portworx.com/scheduler/mesosphere-dcos/) documentation.
 # Install Kafka
-## Adding repository to DC/OS cluster
-Login to a node which has the DC/OS CLI installed and is authenticated to the DC/OS cluster
-Run the following command to add the repository to the DC/OS cluster
-```
- $ dcos package repo add --index=0 kafka-px https://px-dcos.s3.amazonaws.com/v1/kafka/kafka.zip
-```
-Now Kafka-PX package should be available under Universe->Packages
+
+portworx-kafka package should be available under Universe->Packages
 ![Kafka Package List](img/Kafka-install-01.png)
 ## Default Install
 If you want to use the defaults, you can now run the dcos command to install the service
 ```
- $ dcos package install --yes kafka-px
+ $ dcos package install --yes portworx-kafka
 ```
 You can also click on the  “Install” button on the WebUI next to the service and then click “Install Package”.
 This will install all the prerequisites and start the Kafka service on 3 private agents.
 
 ## Advanced Install
-If you want to modify the defaults, click on the “Install” button next to the package on the DCOS UI and then click on
+If you want to modify the defaults, click on the “Install” button next to the package on the DC/OS UI and then click on
 “Advanced Installation”
 
-This provides an option to change the service name, volume name, volume size, and provide any additional options that needs to be passed to the docker volume driver.
-Kafka related parameters can also be modified for example number of broker nodes.
+This provides an option to change the service name, volume name, volume size, and provide any additional options that needs to be passed to portworx volume.
+Kafka related parameters can also be modified, for example: number of broker nodes.
 ![Kafka Install Options](img/Kafka-install-02.png)
 ![Kafka Portworx Options](img/Kafka-install-03.png)
 Click on “Review and Install” and then “Install” to start the installation of the service.
@@ -48,11 +41,11 @@ There will be one volume for each Broker.
 # Verifying Instalation
 Install Kafka CLI using the following command on DC/OS client
 ```
-  $ dcos package install kafka-px --cli
+  $ dcos package install portworx-kafka --cli
 ```
 Find out kafka endpoints
 ```
-dcos kafka-px --name kafka endpoints broker
+dcos portworx-kafka --name kafka endpoints broker
 {
       "address": [
               "10.0.2.235:1025",
@@ -68,31 +61,8 @@ dcos kafka-px --name kafka endpoints broker
 }
 ```
 ```
-$ dcos kafka-px --name kafka endpoints zookeeper
+$ dcos portworx-kafka --name kafka endpoints zookeeper
 master.mesos:2181/dcos-service-kafka
-```
-Use Kafka CLI command to create a topic
-```
-$ dcos kafka-px --name kafka  topic create Hello-World --partitions 3 --replication 3
-{
-  "message": "Output: Created topic \"Hello-World\".\n"
-}
-```
-Connect to the master node and launch kafka client container
-```
-$ dcos node ssh --master-proxy --leader
-core@ip-10-0-6-89 ~ $ docker run -it mesosphere/kafka-client
-root@a1d061372400:/bin#
-```
-Produce a message and send the message to all kafka broker
-```
-root@a1d061372400:/bin# echo "Hello World 01" | ./kafka-console-producer.sh --broker-list kafka-2-broker.kafka.mesos:1025,kafka-0-broker.kafka.mesos:1025,kafka-1-broker.kafka.mesos:1029 --topic Hello-World
-```
-Consume the message
-```
-root@a1d061372400:/bin# ./kafka-console-consumer.sh --zookeeper master.mesos:2181/dcos-service-kafka --topic test-one --from-beginning
-
-Hello World 01
 ```
 # Further resources
 
