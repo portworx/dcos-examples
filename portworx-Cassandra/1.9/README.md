@@ -13,7 +13,7 @@ Please review the main [Portworx on DCOS](https://docs.portworx.com/scheduler/me
 
 # Install Cassandra
 
-Now Cassandra-PX package should be available under Universe->Packages
+portwox-cassandra package should be available under Universe->Packages
 ![Cassandra Package List](img/Cassandra-install-01.png)
 ## Default Install
 If you want to use the defaults, you can now run the dcos command to install the service
