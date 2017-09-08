@@ -41,7 +41,7 @@ Install Elasticsearch CLI using the following command on DC/OS client
 ```
   $ dcos package install portworx-elastic --cli
 ```
-Find the elastic search master-http endpoint from DCOS workstation
+Find the Elasticsearch master-http endpoint from DCOS workstation
 ![Elastic Master Endpoint](img/elastic_endpoints.png)
 
 Connect to the master node and check the cluster status
